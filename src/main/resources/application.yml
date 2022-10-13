@@ -1,0 +1,26 @@
+api:
+  movie:
+    url: https://moviesdatabase.p.rapidapi.com
+    key: NPZeXp5qSsmshqDjw82GZ0kzNS70p1XXDSUjsnchl3CHHGLq3D
+    host: moviesdatabase.p.rapidapi.com
+
+jwt:
+  secret: S3CR3T1098532473S3CR3T81235192S3CR3TS3CR3TS3CR3T712531293012321A163JBV6S3CR3TS3C3CR3TTS3CR3TS3CR3T71
+  expiration-after: 3600
+
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    password: ''
+    url: jdbc:h2:mem:test
+    username: sa
+  h2:
+    console:
+      enabled: true
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
