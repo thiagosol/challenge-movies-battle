@@ -1,0 +1,6 @@
+{
+    "page": "1",
+    "next": "/titles?titleType=movie&info=mini_info&page=2&limit=50&list=most_pop_movies",
+    "entries": 50,
+    "results": []
+}

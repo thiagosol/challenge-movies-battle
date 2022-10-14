@@ -55,7 +55,7 @@ public class Battle {
         return listMovie.stream()
                 .map(Movie::getImdb)
                 .sorted()
-                .reduce("", (imdb, acc) -> imdb + "-" + acc);
+                .reduce("", (acc, imdb) -> acc + (acc.equals("") ? "" : "-") + imdb);
     }
 
     public void play(String playImdbId, Movie betterMovie) {

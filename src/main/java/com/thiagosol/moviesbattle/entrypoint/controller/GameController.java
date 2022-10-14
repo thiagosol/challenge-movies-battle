@@ -6,6 +6,7 @@ import com.thiagosol.moviesbattle.core.usecase.game.StartNewGameUseCase;
 import com.thiagosol.moviesbattle.entrypoint.dto.GameResponseDTO;
 import com.thiagosol.moviesbattle.entrypoint.dto.RankingResponseDTO;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,7 +41,7 @@ public class GameController {
         return ResponseEntity.ok().build();
     }
 
-    @PostMapping("ranking")
+    @GetMapping("ranking")
     public ResponseEntity<List<RankingResponseDTO>> ranking() {
         return ResponseEntity.ok(getRankingUseCase.execute().stream().map(RankingResponseDTO::new).toList());
     }

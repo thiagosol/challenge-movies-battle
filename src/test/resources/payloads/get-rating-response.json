@@ -1,0 +1,21 @@
+{
+    "entries": 2,
+    "results": [
+        {
+            "id": "{{movieA}}",
+            "ratingsSummary": {
+                "aggregateRating": 6.5,
+                "voteCount": 409302,
+                "__typename": "RatingsSummary"
+            }
+        },
+        {
+            "id": "{{movieB}}",
+            "ratingsSummary": {
+                "aggregateRating": 7.4,
+                "voteCount": 4268,
+                "__typename": "RatingsSummary"
+            }
+        }
+    ]
+}

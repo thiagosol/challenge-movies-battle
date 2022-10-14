@@ -1,0 +1,12 @@
+api:
+  movie:
+    url: http://localhost:9561/moviedatabase
+    key: any-key
+    host: any-host
+
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    password: ''
+    url: jdbc:h2:mem:test
+    username: sa
