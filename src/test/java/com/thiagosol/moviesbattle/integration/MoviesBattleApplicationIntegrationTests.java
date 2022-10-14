@@ -95,7 +95,7 @@ public class MoviesBattleApplicationIntegrationTests {
         mockMvc.perform(post(START_GAME_URL)
                         .principal(principal))
                 .andDo(print())
-                .andExpect(status().isOk())
+                .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.status").value("STARTED"))
                 .andExpect(jsonPath("$.battles").exists());
 
@@ -140,7 +140,7 @@ public class MoviesBattleApplicationIntegrationTests {
         mockMvc.perform(post(START_GAME_URL)
                         .principal(principal))
                 .andDo(print())
-                .andExpect(status().isOk())
+                .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.status").value("STARTED"))
                 .andExpect(jsonPath("$.battles").exists());
 
@@ -172,7 +172,7 @@ public class MoviesBattleApplicationIntegrationTests {
         mockMvc.perform(post(START_GAME_URL)
                         .principal(principal))
                 .andDo(print())
-                .andExpect(status().isOk())
+                .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.status").value("STARTED"))
                 .andExpect(jsonPath("$.battles").exists());
 
@@ -213,7 +213,7 @@ public class MoviesBattleApplicationIntegrationTests {
         mockMvc.perform(post(START_GAME_URL)
                         .principal(principal))
                 .andDo(print())
-                .andExpect(status().isOk());
+                .andExpect(status().isCreated());
 
         mockMvc.perform(post(PLAY_BATTLE_URL.replace("{imdbId}", "movieNotExists"))
                         .principal(principal))
@@ -233,7 +233,7 @@ public class MoviesBattleApplicationIntegrationTests {
         mockMvc.perform(post(START_GAME_URL)
                         .principal(principal))
                 .andDo(print())
-                .andExpect(status().isOk())
+                .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.status").value("STARTED"))
                 .andExpect(jsonPath("$.battles").exists());
 

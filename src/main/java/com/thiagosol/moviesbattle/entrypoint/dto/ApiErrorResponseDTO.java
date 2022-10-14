@@ -1,12 +1,13 @@
 package com.thiagosol.moviesbattle.entrypoint.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import org.springframework.http.HttpStatus;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
-public record ApiErrorResponseDTO(String message, int code) {
+public record ApiErrorResponseDTO(@Schema(description = "Error Message")
+                                  String message) {
 
     public ApiErrorResponseDTO(RuntimeException runtimeException){
-        this(runtimeException.getMessage(), HttpStatus.BAD_REQUEST.value());
+        this(runtimeException.getMessage());
     }
 }

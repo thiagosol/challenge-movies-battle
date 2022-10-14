@@ -2,9 +2,8 @@ package com.thiagosol.moviesbattle.core.domain;
 
 import com.thiagosol.moviesbattle.core.domain.enums.BattleStatus;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BattleTest {
 

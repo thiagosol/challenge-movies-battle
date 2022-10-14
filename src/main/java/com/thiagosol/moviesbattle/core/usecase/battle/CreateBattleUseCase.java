@@ -5,7 +5,6 @@ import com.thiagosol.moviesbattle.core.domain.Game;
 import com.thiagosol.moviesbattle.core.exception.CreateBattleErrorException;
 import com.thiagosol.moviesbattle.core.gateway.BattleGateway;
 import com.thiagosol.moviesbattle.core.gateway.MovieGateway;
-import javafx.util.Pair;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -67,11 +66,13 @@ public class CreateBattleUseCase {
     }
 
     private List<Integer> generateSequenceRandom(long totalPage){
+        record PairNumberAndRandom(int number, double random){};
+
         return Stream.iterate(1, n -> n + 1)
                 .limit(totalPage)
-                .map(number -> new Pair<>(number, Math.random()))
-                .sorted(Comparator.comparingDouble(Pair::getValue))
-                .map(Pair::getKey)
+                .map(number -> new PairNumberAndRandom(number, Math.random()))
+                .sorted(Comparator.comparingDouble(PairNumberAndRandom::random))
+                .map(PairNumberAndRandom::number)
                 .toList();
     }
 

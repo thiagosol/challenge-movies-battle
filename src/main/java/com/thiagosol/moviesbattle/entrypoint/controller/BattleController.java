@@ -2,6 +2,7 @@ package com.thiagosol.moviesbattle.entrypoint.controller;
 
 import com.thiagosol.moviesbattle.core.usecase.battle.GetBattleUseCase;
 import com.thiagosol.moviesbattle.core.usecase.battle.PlayBattleUseCase;
+import com.thiagosol.moviesbattle.entrypoint.contract.BattleControllerApi;
 import com.thiagosol.moviesbattle.entrypoint.dto.BattleResponseDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +15,7 @@ import java.security.Principal;
 
 @RestController
 @RequestMapping("battles")
-public class BattleController {
+public class BattleController implements BattleControllerApi {
     private final GetBattleUseCase getBattleUseCase;
     private final PlayBattleUseCase playBattleUseCase;
 

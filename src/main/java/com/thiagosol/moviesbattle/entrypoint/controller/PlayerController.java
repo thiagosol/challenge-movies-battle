@@ -1,6 +1,7 @@
 package com.thiagosol.moviesbattle.entrypoint.controller;
 
 import com.thiagosol.moviesbattle.core.usecase.auth.AuthenticatePlayerUseCase;
+import com.thiagosol.moviesbattle.entrypoint.contract.PlayerControllerApi;
 import com.thiagosol.moviesbattle.entrypoint.dto.PlayerLoginRequestDTO;
 import com.thiagosol.moviesbattle.entrypoint.dto.PlayerTokenResponseDTO;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("players")
-public class PlayerController {
+public class PlayerController implements PlayerControllerApi {
 
     private final AuthenticatePlayerUseCase authenticatePlayerService;
 

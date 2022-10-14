@@ -3,8 +3,10 @@ package com.thiagosol.moviesbattle.entrypoint.controller;
 import com.thiagosol.moviesbattle.core.usecase.game.EndGameUseCase;
 import com.thiagosol.moviesbattle.core.usecase.game.GetRankingUseCase;
 import com.thiagosol.moviesbattle.core.usecase.game.StartNewGameUseCase;
+import com.thiagosol.moviesbattle.entrypoint.contract.GameControllerApi;
 import com.thiagosol.moviesbattle.entrypoint.dto.GameResponseDTO;
 import com.thiagosol.moviesbattle.entrypoint.dto.RankingResponseDTO;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +19,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("games")
-public class GameController {
+public class GameController implements GameControllerApi {
 
     private final StartNewGameUseCase startNewGameUseCase;
     private final EndGameUseCase endGameUseCase;
@@ -32,7 +34,8 @@ public class GameController {
 
     @PostMapping("start")
     public ResponseEntity<GameResponseDTO> start(Principal principal) {
-        return ResponseEntity.ok(new GameResponseDTO(startNewGameUseCase.execute(principal.getName())));
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(new GameResponseDTO(startNewGameUseCase.execute(principal.getName())));
     }
 
     @PutMapping("end")
