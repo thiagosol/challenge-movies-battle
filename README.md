@@ -1,3 +1,5 @@
+[![Build Status](https://app.travis-ci.com/thiagosol/challenge-movies-battle.svg?branch=main)](https://app.travis-ci.com/thiagosol/challenge-movies-battle)
+
 # Movies Battle
 
 Movies Battle is a fun api for you to compete with your friends and find out who knows the most about movies

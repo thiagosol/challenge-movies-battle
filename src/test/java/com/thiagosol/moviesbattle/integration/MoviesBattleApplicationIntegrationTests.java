@@ -185,8 +185,7 @@ public class MoviesBattleApplicationIntegrationTests {
                 .andExpect(jsonPath("$.movieA.title").exists())
                 .andExpect(jsonPath("$.movieA.releaseYear").exists())
                 .andExpect(jsonPath("$.movieB.imdb").exists())
-                .andExpect(jsonPath("$.movieB.title").exists())
-                .andExpect(jsonPath("$.movieB.releaseYear").exists());
+                .andExpect(jsonPath("$.movieB.title").exists());
 
         mockMvc.perform(put(END_GAME_URL)
                         .principal(principal))
@@ -247,7 +246,6 @@ public class MoviesBattleApplicationIntegrationTests {
                 .andExpect(jsonPath("$.movieA.releaseYear").exists())
                 .andExpect(jsonPath("$.movieB.imdb").exists())
                 .andExpect(jsonPath("$.movieB.title").exists())
-                .andExpect(jsonPath("$.movieB.releaseYear").exists())
                 .andReturn();
 
         var currentBattle = mapper.readValue(currentBattleResponse.getResponse().getContentAsString(), BattleResponseDTO.class);
@@ -267,7 +265,6 @@ public class MoviesBattleApplicationIntegrationTests {
                 .andExpect(jsonPath("$.movieA.releaseYear").exists())
                 .andExpect(jsonPath("$.movieB.imdb").exists())
                 .andExpect(jsonPath("$.movieB.title").exists())
-                .andExpect(jsonPath("$.movieB.releaseYear").exists())
                 .andReturn();
 
         mockMvc.perform(put(END_GAME_URL)
