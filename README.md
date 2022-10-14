@@ -20,6 +20,17 @@ After that, just have fun accessing the api through your browser on the default 
 The API swagger and documentation can be found at URL:
 [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
 
+#### There are two previously registered users:
+
+```
+login: player1
+pass: 12345
+```
+```
+login: player2
+pass: 12345
+```
+
 ## Run Integration Tests
 
 Through a terminal window, access the project directory, and execute the following command:
