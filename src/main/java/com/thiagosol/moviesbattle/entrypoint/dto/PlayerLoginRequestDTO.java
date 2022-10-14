@@ -6,7 +6,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 public record PlayerLoginRequestDTO(@Schema(description = "Player username", example = "player1")
                                     String login,
 
-                                    @Schema(description = "Password for login", example = "A14%as!")
+                                    @Schema(description = "Password for login", example = "12345")
                                     String password) {
 
     public Player toPlayer(){
